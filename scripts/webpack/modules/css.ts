@@ -33,6 +33,27 @@ export const loadDevCss = (): Configuration => ({
     },
 });
 
+export const loadProdCssWithoutMini = (): Configuration => ({
+    module: {
+        rules: [
+            {
+                test: /.s?css$/,
+                use:  [
+                    MiniCssExtractPlugin.loader,
+                    loadCss({ sourceMap: false }),
+                    'resolve-url-loader',
+                    loadSass({ sourceMap: true }),
+                ],
+            },
+        ],
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename:      '[name].[contenthash:5].css',
+            chunkFilename: '[name].[contenthash:3].css',
+        }),
+    ],
+});
 export const loadProdCss = (): Configuration => ({
     module: {
         rules: [
