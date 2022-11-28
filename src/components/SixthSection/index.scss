@@ -1,0 +1,86 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+.sixthsection {
+    height: 1025px;
+    width: $section-width;
+    position: relative;
+    margin: auto;
+    & .title {
+        position: absolute;
+        width: 589px;
+        height: 100px;
+        left: 48px;
+        top: 48px;
+
+        font-family: $lexend;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 50px;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        color: #099F69;
+    }
+    & .slider {
+        position: absolute;
+        width: 1264px;
+        top: 193px;
+        left: 48px;
+        overflow: hidden;
+        & .slides-wrapper {
+            display: flex;
+            transition: .3s ease;
+            & .slide {
+                flex-shrink: 0;
+                overflow: hidden;
+                border-radius: 16px;
+                margin-right: 40px;
+                & img {
+                    width: 1050px;
+                    height: 690px;
+                }
+            }
+        }
+    }
+    & .nav-buttons {
+        position: absolute;
+        bottom: 70px;
+        right: 192px;
+        width: 136px;
+        display: flex;
+        justify-content: space-between;
+        & .nav-btn {
+            width: 16px;
+            height: 4px;
+            background: #E0F9EB;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        & .nav-btn.active {
+            width: 40px;
+            height: 4px;
+            background: #EDCF65;
+            border-radius: 5px;
+        }
+    }
+    & .arrows {
+        display: flex;
+        width: 104px;
+        justify-content: space-between;
+        position: absolute;
+        right: 48px;
+        bottom: 48px;
+        & .arrow {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+        }
+        & .right-arrow {
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+.fifthsection {
+    width: $section-width;
+    height: 904px;
+    background: linear-gradient(117.37deg, #86D784 6.88%, #1B996B 94.28%);
+    margin: auto;
+    padding: 48px 48px 54px;
+    & .top {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        & .title {
+            height: 100px;
+            width: 300px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        & .description {
+            width: 592px;
+            height: 112px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+            color: #FFFFFF;
+        }
+    }
+    & .card-wrapper {
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+        & .card {
+            position: relative;
+            width: 400px;
+            height: 610px;
+            & .card-image-container {
+                width: 400px;
+                height: 540px;
+                background: linear-gradient(180deg, rgba(44, 121, 94, 0.4) 0%, #147955 100%);
+                overflow: hidden;
+                border-radius: 32px;
+                position: relative;
+                & img {
+                    position: absolute;
+                    left: -25px;
+                    // transition: .3s ease;
+                }
+                &:hover {
+                    & img {
+                        top: 20px;
+                        left: -8px;
+                        scale: 1.1;
+                    }
+                }
+            }
+            & .card-name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 40px;
+                display: flex;
+                align-items: center;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
