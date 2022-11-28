@@ -1,0 +1,239 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+@media (max-width: 1359px) {
+    .eighthsection {
+        position: relative;
+        width: 100%;
+        height: 1062px;
+        overflow: unset;
+        & .title {
+            margin-left: 24px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        & .description {
+            width: 40%;
+            margin: 24px 0 0 24px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .coordinates {
+            margin: 32px 0 0 24px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .map {
+            margin-top: 71px;
+            position: relative;
+            width: 100%;
+            filter: unset;
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+            }
+        }
+        & .tapToZoom {
+            display: none;
+            position: absolute;
+            bottom: 127px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background: #019748;
+            padding: 10px 12px;
+        }
+    }
+    .eighthsection.rtl {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+        & .title, .description, .coordinates {
+            margin-right: 24px;
+        }
+    }
+}
+@media (max-width: 1057px) {
+    .eighthsection {
+        height: 942px;
+    }
+}
+@media (max-width: 1057px) {
+    .eighthsection {
+        height: 842px;
+    }
+}
+
+@media (max-width: 920px) {
+    .eighthsection {
+        height: 742px;
+    }
+}
+@media (max-width: 750px) {
+    .eighthsection {
+        min-height: 656px;
+    }
+}
+
+@media (max-width: 470px) {
+    .eighthsection {
+        position: relative;
+        width: 100%;
+        min-height: 656px;
+        overflow: hidden;
+        & .title {
+            margin-left: 24px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        & .description {
+            width: unset;
+            margin: 24px 0 0 24px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .coordinates {
+            margin: 32px 0 0 24px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .map {
+            margin-top: 71px;
+            position: relative;
+            width: 100%;
+            height: 333px;
+            filter: blur(2px) brightness(1);
+            & img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 632px;
+                height: 347px;
+            }
+        }
+        & .tapToZoom {
+            display: block;
+            position: absolute;
+            bottom: 213px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background: #019748;
+            padding: 10px 12px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .eighthsection {
+        
+        & .map {
+            margin-top: 71px;
+            position: relative;
+            width: 100%;
+            height: 333px;
+            filter: blur(2px) brightness(1);
+            & img {
+                position: absolute;
+                top: 0;
+                left: -129px;
+                width: 632px;
+                height: 347px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .eighthsection {
+        padding: 0 48px 48px 48px;
+        width: 1360px;
+        margin: auto;
+        & .title {
+            margin-top: 64px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 28px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        & .description {
+            margin-top: 24px;
+            width: 535px;
+            font-family: $inter;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .coordinates {
+            margin-top: 32px;
+            margin-bottom: 35px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #000000;
+        }
+        & .tapToZoom {
+            display: none;
+        }
+    }
+    .eighthsection.rtl {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+    }
+}
