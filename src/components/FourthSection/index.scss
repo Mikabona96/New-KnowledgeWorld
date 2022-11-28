@@ -235,6 +235,18 @@
 
                         color: #019748;
                     }
+                    & .event.brown {
+                        color: #C45849;
+                        background: #FFF0EE;
+                    }
+                    & .event.violet {
+                        background: #F2F1FF;
+                        color: #333D9B;
+                    }
+                    & .event.green {
+                        background: #ECFFF8;
+                        color: #019748;
+                    }
                     & .slide-title {
                         position: absolute;
                         top: 354px;
@@ -3630,7 +3642,7 @@
             }
             & .viewbooking-btn {
                 padding: 12px 24px;
-                width: 195px;
+                width: 196px;
                 height: 47px;
                 background: #fff;
                 border-radius: 48px;
@@ -3739,7 +3751,6 @@
                         left: 24px;
                         padding: 8px 16px;
                         height: 36px;
-                        background: #FFF0EE;
                         border-radius: 8px;
                         font-family: $lexend;
                         font-style: normal;
@@ -3748,7 +3759,18 @@
                         line-height: 20px;
                         display: flex;
                         align-items: center;
+                    }
+                    & .event.brown {
                         color: #C45849;
+                        background: #FFF0EE;
+                    }
+                    & .event.violet {
+                        background: #F2F1FF;
+                        color: #333D9B;
+                    }
+                    & .event.green {
+                        background: #ECFFF8;
+                        color: #019748;
                     }
                     & .slide-title {
                         position: absolute;
@@ -3859,18 +3881,6 @@
                                 background: #4AB376;
                                 color: #fff;
                             }
-                        }
-                    }
-                    &:nth-child(2) {
-                        & .event {
-                            background: #F2F1FF;
-                            color: #333D9B;
-                        }
-                    }
-                    &:nth-child(3) {
-                        & .event {
-                            background: #ECFFF8;
-                            color: #019748;
                         }
                     }
                 }
