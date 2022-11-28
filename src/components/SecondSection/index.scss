@@ -1,113 +1,206 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-.secondsection {
-    width: $section-width;
-    height: $section-height;
-    margin: auto;
-    padding: 48px 48px 72px;
-    & .top {
-        display: flex;
-        justify-content: space-between;
+@media (max-width: 1359px) {
+    .secondsection {
         width: 100%;
-        & .title {
-            width: 275px;
-            height: 150px;
-            font-family: $lexend;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 40px;
-            line-height: 50px;
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
-            color: #0CA069;
-        }
-        & .description {
-            width: 589px;
-            height: 112px;
-            font-family: $inter;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 28px;
-            color: #000000;
-        }
-    }
-    & .card-wrapper {
-        margin-top: 50px;
-        display: flex;
-        justify-content: space-between;
-        & .card {
-            width: 400px;
-            height: 560px;
-            overflow: hidden;
-            border-radius: 30px;
-            position: relative;
-            & img {
-                position: absolute;
-                top: 117px;
-                left: 24px;
-                scale: 1.75;
-                transition: .3s ease;
-            }
-            & .card-title {
-                position: absolute;
-                top: 450px;
-                left: 24px;
-                width: 350px;
-                height: 80px;
+        padding: 32px 24px;
+        overflow: hidden;
+        & .top {
+            & .title {
+                width: 130px;
                 font-family: $lexend;
                 font-style: normal;
-                font-weight: 500;
-                font-size: 32px;
-                line-height: 40px;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                display: flex;
+                align-items: center;
                 text-transform: uppercase;
-                color: #FFFFFF;
-                transition: .3s ease;
+                color: #0CA069;
             }
-            & .card-description {
-                display: none;
-                transition: .3s ease;
+            & .description {
+                max-width: 490px;
+                margin-top: 16px;
+                font-family: $inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                color: #000000;
             }
-            & .card-link {
-                display: none;
-                transition: .3s ease;
-            }
-            &:hover {
+        }
+        & .card-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 32px;
+            flex-wrap: wrap;
+            & .card {
+                flex-shrink: 0;
+                width: 327px;
+                height: 500px;
+                overflow: hidden;
                 & img {
-                    scale: 1.8;
+                    border-radius: 32px;
+                    width: 327px;
+                    height: 278px;
                 }
                 & .card-title {
-                    position: absolute;
-                    top: 300px;
+                    margin-top: 26px;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 22px;
+                    text-transform: uppercase;
+                    color: #000000;
                 }
                 & .card-description {
-                    position: absolute;
-                    width: 350px;
-                    top: 400px;
-                    left: 24px;
-                    display: block;
-                    font-family: "Inter";
+                    margin-top: 16px;
+                    font-family: $inter;
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 21px;
+                    font-size: 16px;
                     line-height: 28px;
-                    color: #fff;
-
+                    color: #000000;
                 }
                 & .card-link {
-                    position: absolute;
-                    display: block;
+                    margin-top: 16px;
+                    text-decoration: none;
                     font-family: $inter;
                     font-style: normal;
                     font-weight: 600;
                     font-size: 20px;
                     line-height: 28px;
-                    text-decoration: none;
                     color: #4AB376;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .secondsection {
+        & .card-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 32px;
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .secondsection {
+        width: $section-width;
+        height: $section-height;
+        margin: auto;
+        padding: 48px 48px 72px;
+        & .top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            & .title {
+                width: 275px;
+                height: 150px;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 50px;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                color: #0CA069;
+            }
+            & .description {
+                width: 589px;
+                height: 112px;
+                font-family: $inter;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 28px;
+                color: #000000;
+            }
+        }
+        & .card-wrapper {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            & .card {
+                width: 400px;
+                height: 560px;
+                overflow: hidden;
+                border-radius: 30px;
+                position: relative;
+                & img {
+                    position: absolute;
+                    top: 117px;
                     left: 24px;
-                    bottom: 24px;
+                    scale: 1.75;
+                    transition: .3s ease;
+                }
+                & .card-title {
+                    position: absolute;
+                    top: 450px;
+                    left: 24px;
+                    width: 350px;
+                    height: 80px;
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 40px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    transition: .3s ease;
+                }
+                & .card-description {
+                    display: none;
+                    transition: .3s ease;
+                }
+                & .card-link {
+                    display: none;
+                    transition: .3s ease;
+                }
+                &:hover {
+                    & img {
+                        scale: 1.8;
+                    }
+                    & .card-title {
+                        position: absolute;
+                        top: 300px;
+                    }
+                    & .card-description {
+                        position: absolute;
+                        width: 350px;
+                        top: 400px;
+                        left: 24px;
+                        display: block;
+                        font-family: "Inter";
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 21px;
+                        line-height: 28px;
+                        color: #fff;
+    
+                    }
+                    & .card-link {
+                        position: absolute;
+                        display: block;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        text-decoration: none;
+                        color: #4AB376;
+                        left: 24px;
+                        bottom: 24px;
+                    }
                 }
             }
         }
