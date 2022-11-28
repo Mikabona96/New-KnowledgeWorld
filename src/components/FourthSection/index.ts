@@ -441,6 +441,8 @@ export const fourthSectionFunction = () => {
         const rightArrow = (document.querySelector('.fourthsection .arrows .right-arrow')) as HTMLElement;
         let slideIndex  = 0;
         let width = slide.offsetWidth;
+        let regExp = window.getComputedStyle(slide).marginRight.match(/\d+/g);
+        let marginRight = regExp ? regExp[ 0 ] : null;
         const tabs = document.querySelectorAll('.fourthsection .tabs .tab');
         const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
         const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
@@ -513,6 +515,24 @@ export const fourthSectionFunction = () => {
             slides = slideWrappers[ slideWrapperIndex ].querySelectorAll('.slide');
         };
 
+        // ============= Custom Select =============
+        const selectedTab = (document.querySelector('.select-wrapper-tab .selected')) as HTMLElement;
+        const optionsTab = document.querySelectorAll('.select-wrapper-tab .option');
+        const optionsContainerTab = document.querySelector('.select-wrapper-tab .options-container');
+        selectedTab?.addEventListener('click', () => {
+            optionsContainerTab?.classList.toggle('active');
+        });
+        optionsTab.forEach((o) => {
+            o.addEventListener('click', () => {
+                const data = o?.querySelector('label')?.innerHTML;
+                const value = Number(o?.querySelector('label')?.getAttribute('data-value'));
+
+                optionsContainerTab?.classList.remove('active');
+                selectedTab.innerHTML = `${data}`;
+                removeActiveSlideWrapper(value);
+            });
+        });
+
         tabs.forEach((tab, i) => {
             tab.addEventListener('click', () => {
                 removeActiveTab(i);
@@ -535,7 +555,7 @@ export const fourthSectionFunction = () => {
                 btn.addEventListener('click', () => {
                     slideIndex = i;
                     const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-                    slideWrap.style.transform = `translateX(-${i * (width + 32)}px)`;
+                    slideWrap.style.transform = `translateX(-${i * (width + Number(marginRight))}px)`;
                     removeActiveNavBtn(i);
                 });
             });
@@ -551,7 +571,7 @@ export const fourthSectionFunction = () => {
             }
             slideIndex -= 1;
             const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-            slideWrap.style.transform = `translateX(-${slideIndex * (width + 32)}px)`;
+            slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
             removeActiveNavBtn(slideIndex);
         });
 
@@ -563,7 +583,7 @@ export const fourthSectionFunction = () => {
             }
             slideIndex += 1;
             const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-            slideWrap.style.transform = `translateX(-${slideIndex * (width + 32)}px)`;
+            slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
             removeActiveNavBtn(slideIndex);
         });
     });
