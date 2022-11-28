@@ -90,7 +90,9 @@
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 18px;
-                    color: #848484;
+                    &::placeholder {
+                        color: #848484;
+                    }
                 }
                 & textarea {
                     padding: 15px 16px 0px;
@@ -103,10 +105,12 @@
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 18px;
-                    color: #848484;
                     border: 0;
                     resize: none;
                     margin-bottom: 24px;
+                    &::placeholder {
+                        color: #848484;
+                    }
                 }
                 & .btn {
                     padding: 24px 48px;
