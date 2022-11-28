@@ -447,7 +447,7 @@ export const fourthSectionFunction = () => {
         const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
         const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
         let slideWrapperIndex = 0;
-        let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper .slide');
+        let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
 
         const removeActiveTab = (idx: number) => {
             tabs.forEach((tab, i) => {
@@ -578,13 +578,12 @@ export const fourthSectionFunction = () => {
         rightArrow.addEventListener('click', () => {
             if (slideIndex >= slides.length - 1) {
                 slideIndex = slides.length - 1;
-
-                return;
+            } else {
+                slideIndex += 1;
+                const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
+                slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
+                removeActiveNavBtn(slideIndex);
             }
-            slideIndex += 1;
-            const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-            slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
-            removeActiveNavBtn(slideIndex);
         });
     });
 };
