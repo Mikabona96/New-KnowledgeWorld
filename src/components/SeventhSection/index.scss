@@ -1,122 +1,297 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-.seventhsection {
-    width: $section-width;
-    height: 720px;
-    padding: 48px;
-    margin: auto;
-    display: flex;
-    & .left {
-        width: 50%;
-        & .title {
-            width: 267px;
-            height: 70px;
+@media (max-width: 1359px) {
+    .seventhsection {
+        height: 564px;
+        overflow: hidden;
+        width: 100%;
+        padding: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .left {
+            width: 327px;
+            & .title {
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                color: #000000;
+            }
+            & .info {
+                display: flex;
+                flex-direction: column;
+                margin-top: 40px;
+                &:nth-child(2) {
+                    margin-top: 30px;
+                }
+                & .info-title {
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    /* identical to box height */
 
-            font-family: $lexend;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 50px;
-            display: flex;
-            align-items: center;
-            text-transform: uppercase;
+                    text-transform: uppercase;
 
-            color: #099F69;
+                    color: #000000;
+                }
+                & a {
+                    margin-top: 16px;
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #000000;
+                    text-decoration: none;
+                }
+                & p {
+                    margin-top: 16px;
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: #000000;
+                }
+            }
+            & .working-hours {
+                margin-top: 40px;
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 20px;
+                text-transform: uppercase;
+                color: #000000;
+            }
+
+            & .days-time {
+                margin-top: 24px;
+                width: 327px;
+                height: 145px;
+                display: flex;
+                justify-content: space-between;
+                & .days {
+                    width: 151.5px;
+                    height: 145px;
+                    background: #E0F9EB;
+                    border-radius: 24px;
+                    padding: 24px;
+
+                    & .days-title {
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+
+                    & .days-description {
+                        margin-top: 13px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                }
+                & .time {
+                    width: 151.5px;
+                    height: 145px;
+                    background: #E0F9EB;
+                    border-radius: 24px;
+                    padding: 24px;
+
+                    & .time-title {
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+
+                    & .time-description {
+                        margin-top: 13px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                }
+            }
         }
-        & .info {
-            & .info-title {
+
+        & .right {
+            margin-top: 24px;
+            width: 490px;
+            height: 484px;
+            overflow: hidden;
+            & img {
+                width: 490px;
+                height: 484px;
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .seventhsection {
+        height: 540px;
+        padding: 24px 24px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .right {
+            margin-top: 24px;
+            width: 327px;
+            height: 323px;
+            & img {
+                width: 327px;
+                height: 323px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .seventhsection {
+        height: 904px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1360px) {
+    .seventhsection {
+        width: $section-width;
+        height: 720px;
+        padding: 48px;
+        margin: auto;
+        display: flex;
+        & .left {
+            width: 50%;
+            & .title {
+                width: 267px;
+                height: 70px;
+
+                font-family: $lexend;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 50px;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+
+                color: #099F69;
+            }
+            & .info {
+                & .info-title {
+                    font-family: $lexend;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 25px;
+                    /* identical to box height */
+
+                    text-transform: uppercase;
+
+                    color: #000000;
+                }
+                & a {
+                    text-decoration: none;
+                }
+                & a,p {
+                    font-family: $inter;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 28px;
+                    color: #000000;
+                }
+                &:nth-child(2) {
+                    margin-top: 56px;
+                }
+                &:nth-child(3) {
+                    margin-top: 40px;
+                }
+            }
+            & .working-hours {
+                margin-top: 40px;
                 font-family: $lexend;
                 font-style: normal;
                 font-weight: 500;
                 font-size: 20px;
                 line-height: 25px;
-                /* identical to box height */
-
                 text-transform: uppercase;
-
                 color: #000000;
             }
-            & a {
-                text-decoration: none;
-            }
-            & a,p {
-                font-family: $inter;
-                font-style: normal;
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 28px;
-                color: #000000;
-            }
-            &:nth-child(2) {
-                margin-top: 56px;
-            }
-            &:nth-child(3) {
-                margin-top: 40px;
-            }
-        }
-        & .working-hours {
-            margin-top: 40px;
-            font-family: $lexend;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 25px;
-            text-transform: uppercase;
-            color: #000000;
-        }
 
-        & .days-time {
-            display: flex;
-            margin-top: 24px;
-            width: 388px;
-            justify-content: space-between;
-            & .days {
-                padding: 24px;
-                width: 182px;
-                height: 145px;
-                background: #E0F9EB;
-                border-radius: 24px;
-                & .days-title {
-                    font-family: $inter;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: #000000;
+            & .days-time {
+                display: flex;
+                margin-top: 24px;
+                width: 388px;
+                justify-content: space-between;
+                & .days {
+                    padding: 24px;
+                    width: 182px;
+                    height: 145px;
+                    background: #E0F9EB;
+                    border-radius: 24px;
+                    & .days-title {
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                    & .days-description {
+                        margin-top: 13px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
                 }
-                & .days-description {
-                    margin-top: 13px;
-                    font-family: $inter;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: #000000;
-                }
-            }
-            & .time {
-                padding: 24px;
-                width: 182px;
-                height: 145px;
-                background: #E0F9EB;
-                border-radius: 24px;
-                & .time-title {
-                    font-family: $inter;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: #000000;
-                }
-                & .time-description {
-                    margin-top: 13px;
-                    font-family: $inter;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 20px;
-                    line-height: 28px;
-                    color: #000000;
+                & .time {
+                    padding: 24px;
+                    width: 182px;
+                    height: 145px;
+                    background: #E0F9EB;
+                    border-radius: 24px;
+                    & .time-title {
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
+                    & .time-description {
+                        margin-top: 13px;
+                        font-family: $inter;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 28px;
+                        color: #000000;
+                    }
                 }
             }
         }
