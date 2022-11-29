@@ -1,86 +1,189 @@
 @import '../../assets/variables.scss';
 @import '../../assets/fonts.scss';
 
-.sixthsection {
-    height: 1025px;
-    width: $section-width;
-    position: relative;
-    margin: auto;
-    & .title {
-        position: absolute;
-        width: 589px;
-        height: 100px;
-        left: 48px;
-        top: 48px;
-
-        font-family: $lexend;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 50px;
+@media (max-width: 1359px) {
+    .sixthsection {
+        height: 724px;
+        width: 100%;
+        padding: 24px 0px 24px 24px;
         display: flex;
-        align-items: center;
-        text-transform: uppercase;
-
-        color: #099F69;
-    }
-    & .slider {
-        position: absolute;
-        width: 1264px;
-        top: 193px;
-        left: 48px;
-        overflow: hidden;
-        & .slides-wrapper {
+        flex-direction: column;
+        // align-items: center;
+        position: relative;
+        & .title {
+            width: 210px;
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
             display: flex;
-            transition: .3s ease;
-            & .slide {
-                flex-shrink: 0;
-                overflow: hidden;
-                border-radius: 16px;
-                margin-right: 40px;
-                & img {
-                    width: 1050px;
-                    height: 690px;
+            align-items: center;
+            text-transform: uppercase;
+            color: #099F69;
+        }
+        & .slider {
+            margin-top: 24px;
+            overflow: hidden;
+            & .slides-wrapper {
+                display: flex;
+                transition: .3s ease;
+                & .slide {
+                    flex-shrink: 0;
+                    border-radius: 16px;
+                    margin-right: 40px;
+                    width: 852px;
+                    height: 560px;
+                }
+            }
+        }
+        & .navigation {
+            position: absolute;
+            bottom: 0;
+            right: 24px;
+            width: 327px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & .nav-buttons {
+                width: 136px;
+                display: flex;
+                justify-content: space-between;
+                & .nav-btn {
+                    width: 16px;
+                    height: 4px;
+                    background: #E0F9EB;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: .3s ease;
+                }
+                & .nav-btn.active {
+                    width: 40px;
+                    height: 4px;
+                    background: #EDCF65;
+                    border-radius: 5px;
+                }
+            }
+            & .arrows {
+                display: flex;
+                width: 104px;
+                justify-content: space-between;
+                & .arrow {
+                    width: 48px;
+                    height: 48px;
+                    cursor: pointer;
+                }
+                & .right-arrow {
+                    transform: rotate(180deg);
                 }
             }
         }
     }
-    & .nav-buttons {
-        position: absolute;
-        bottom: 70px;
-        right: 192px;
-        width: 136px;
-        display: flex;
-        justify-content: space-between;
-        & .nav-btn {
-            width: 16px;
-            height: 4px;
-            background: #E0F9EB;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: .3s ease;
-        }
-        & .nav-btn.active {
-            width: 40px;
-            height: 4px;
-            background: #EDCF65;
-            border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .sixthsection {
+        height: 462px;
+        & .slider {
+            & .slides-wrapper {
+                & .slide {
+                    width: 426px;
+                    height: 280px;
+                }
+            }
         }
     }
-    & .arrows {
-        display: flex;
-        width: 104px;
-        justify-content: space-between;
-        position: absolute;
-        right: 48px;
-        bottom: 48px;
-        & .arrow {
-            width: 48px;
-            height: 48px;
-            cursor: pointer;
+}
+
+@media (min-width: 1360px) {
+    .sixthsection {
+        height: 1025px;
+        width: $section-width;
+        position: relative;
+        margin: auto;
+        & .title {
+            position: absolute;
+            width: 589px;
+            height: 100px;
+            left: 48px;
+            top: 48px;
+    
+            font-family: $lexend;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 50px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+    
+            color: #099F69;
         }
-        & .right-arrow {
-            transform: rotate(180deg);
+        & .slider {
+            position: absolute;
+            width: 1264px;
+            top: 193px;
+            left: 48px;
+            overflow: hidden;
+            & .slides-wrapper {
+                display: flex;
+                transition: .3s ease;
+                & .slide {
+                    flex-shrink: 0;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    margin-right: 40px;
+                    width: 1050px;
+                    height: 690px;
+                    & img {
+                        width: 1050px;
+                        height: 690px;
+                    }
+                }
+            }
+        }
+        & .navigation {
+            position: absolute;
+            bottom: 0;
+            right: 48px;
+            width: 280px;
+            height: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & .nav-buttons {
+                width: 136px;
+                display: flex;
+                justify-content: space-between;
+                & .nav-btn {
+                    width: 16px;
+                    height: 4px;
+                    background: #E0F9EB;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: .3s ease;
+                }
+                & .nav-btn.active {
+                    width: 40px;
+                    height: 4px;
+                    background: #EDCF65;
+                    border-radius: 5px;
+                }
+            }
+            & .arrows {
+                display: flex;
+                width: 104px;
+                justify-content: space-between;
+                & .arrow {
+                    width: 48px;
+                    height: 48px;
+                    cursor: pointer;
+                }
+                & .right-arrow {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
 }
