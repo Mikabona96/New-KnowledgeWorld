@@ -222,7 +222,7 @@ export const fourthSectionFunction = () => {
         const centerTime = (document.querySelector('.step3 .content .date-time .time span')) as HTMLElement;
         const step4time = document.querySelector('.step4 .event-info .time-date li .time-date_time');
         const optionsListTime = document.querySelectorAll('.select-wrapper-time .option');
-        const step4descrTime = document.querySelector('.step4 .description .description-time');
+        const step4descrTime = document.querySelector('.step4 .description .description-tiOman');
 
         selectedTime?.addEventListener('click', () => {
             optionsContainerTime?.classList.toggle('active');
@@ -372,17 +372,21 @@ export const fourthSectionFunction = () => {
             selectedCenter.innerHTML = 'Select Center';
             selectedTime.innerHTML = 'Select timeslot';
             AdultsCount!.innerHTML = '';
+
             selectedAdults!.innerHTML = 'Number of Adult Visitors (18+)';
             ChildsCount!.innerHTML = '';
             selectedChilds!.innerHTML = 'Number of Child Visitors';
             Country!.innerHTML = '';
+
             centerTitle.innerHTML = '';
             centerTime.innerHTML = '';
             centerDate.innerHTML = '';
             place!.innerHTML = '';
+
             step4time!.innerHTML = '';
             step4date!.innerHTML = '';
             step4day!.innerHTML = '';
+
             step4descrDate!.innerHTML = '';
             step4descrPlace!.innerHTML = '';
             step4descrTime!.innerHTML = '';
