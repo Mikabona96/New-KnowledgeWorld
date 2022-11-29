@@ -222,4 +222,11 @@ export const sliderHandler = () => {
         });
     }
     initSwipeEvents(slideWrapperIndex);
+
+    window.addEventListener('resize', () => {
+        width = slide.offsetWidth;
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
+        wrapper.style.transform = `translateX(-${(width + Number(marginRight)) * slideIndex}px)`;
+    });
 };
