@@ -26,6 +26,7 @@ export const sliderHandler = () => {
         });
     };
     const removeActiveSlideWrapper = (idx: number) => {
+        slideWrapperIndex = idx;
         slideWrappers.forEach((slideWrapper, i) => {
             slideWrapper.classList.remove('active');
             if (i === idx) {
@@ -48,6 +49,7 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             initNavBtns();
+            initSwipeEvents(slideWrapperIndex);
         }
         if (idx === 1) {
             navBtnsContainer!.innerHTML = '';
@@ -63,6 +65,7 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             initNavBtns();
+            initSwipeEvents(slideWrapperIndex);
         }
         if (idx === 2) {
             navBtnsContainer!.innerHTML = '';
@@ -78,8 +81,8 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             initNavBtns();
+            initSwipeEvents(slideWrapperIndex);
         }
-        slideWrapperIndex = idx;
         slides = slideWrappers[ slideWrapperIndex ].querySelectorAll('.slide');
     };
 
@@ -155,7 +158,7 @@ export const sliderHandler = () => {
     });
 
     // ================== Swipe Events =================
-    function initSwipeEvents() {
+    function initSwipeEvents(slideWrapperIndex: number) {
         // =========== Swipe Events =============
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         let initialPosition = 0;
@@ -218,5 +221,5 @@ export const sliderHandler = () => {
             }
         });
     }
-    initSwipeEvents();
+    initSwipeEvents(slideWrapperIndex);
 };
