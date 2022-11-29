@@ -98,6 +98,7 @@ export const eighthSectionFunction = () => {
         top = mapWrapper.offsetTop;
         tapToZoomHandler();
         mapSizeHandler();
+        eighthSection.style.height = 'unset';
         mapWidth = window.getComputedStyle(map).width;
     });
 };
