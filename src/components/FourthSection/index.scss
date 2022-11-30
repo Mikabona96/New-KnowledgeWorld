@@ -4572,7 +4572,6 @@
             }
         }
         & .makebooking-stepper {
-            left: 0;
             & .top {
                 flex-direction: row-reverse;
                 text-align: end;
@@ -4715,6 +4714,40 @@
                                 text-align: end;
                             }
                         }
+                    }
+                }
+            }
+        }
+        & .findbooking-stepper {
+            left: 0;
+            & .top {
+                text-align: end;
+                flex-direction: row-reverse;
+            }
+            & .step1 {
+                & .step-title {
+                    display: flex;
+                    justify-content: end;
+                    padding-right: 10px;
+                }
+                & .findBooking {
+                    flex-direction: row-reverse;
+                    & input {
+                        text-align: end;
+                    }
+                }
+            }
+            & .step2 {
+                & .step-title {
+                    display: flex;
+                    justify-content: end;
+                    padding-right: 10px;
+                }
+                & .content {
+                    & .left {
+                        text-align: end;
+                        display: flex;
+                        flex-direction: row-reverse;
                     }
                 }
             }
