@@ -129,6 +129,45 @@
             }
         }
     }
+    .ninethsection.rtl {
+        flex-direction: row-reverse;
+        & .left {
+            & img {
+                display: block;
+                margin-left: auto;
+            }
+            & .title {
+                margin-left: auto;
+                text-align: end;
+            }
+            & .description {
+                margin-left: auto;
+                text-align: end;
+            }
+        }
+        & .right {
+            & .form-wrapper {
+                & .form-title {
+                    width: fit-content;
+                    margin-left: auto;
+                }
+                & .form-description {
+                    width: fit-content;
+                    margin-left: auto;
+                    text-align: end;
+                }
+                & form {
+                    & input, textarea {
+                        text-align: end;
+                    }
+                    & .btn {
+                        display: block;
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -159,6 +198,9 @@
             margin-top: 24px;
             align-self: center;
         }
+    }
+    .ninethsection.rtl {
+        flex-direction: column;
     }
 }
 
@@ -290,6 +332,42 @@
                         border: 0;
                         cursor: pointer;
                         color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+    .ninethsection.rtl {
+        flex-direction: row-reverse;
+        & .left {
+            & img {
+                margin-left: auto;
+            }
+            & .title {
+                margin-left: auto;
+                text-align: end;
+            }
+            & .description {
+                margin-left: auto;
+                text-align: end;
+            }
+        }
+        & .right {
+            & .form-wrapper {
+                & .form-title {
+                    width: fit-content;
+                    margin-left: auto;
+                }
+                & .form-description {
+                    width: fit-content;
+                    margin-left: auto;
+                }
+                & form {
+                    & input, textarea {
+                        text-align: end;
+                    }
+                    & .btn {
+                        margin-left: auto;
                     }
                 }
             }
