@@ -50,7 +50,7 @@
             top: -32px;
             left: -100%;
             width: 100%;
-            height: 50vh;
+            height: 258px;
             transition: .3s ease;
             background: #fff;
             overflow: scroll;
@@ -84,6 +84,7 @@
                 margin-left: 24px;
                 margin-bottom:  20px;
                 & .link {
+                    position: unset;
                     text-decoration: none;
                     font-family: $readex;
                     font-style: normal;
@@ -95,7 +96,8 @@
             }
         }
         & .logo {
-            width: 134;
+            position: unset;
+            width: 134px;
             height: 48px;
             z-index: 1;
         }
@@ -124,6 +126,7 @@
          list-style: none;
          position: unset;
          transition: none;
+         overflow: unset;
          background: unset;
          width: 398px;
          height: 36px;
