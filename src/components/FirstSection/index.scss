@@ -68,6 +68,22 @@
             }
         }
     }
+    .firstsection.rtl {
+        & .title {
+            left: auto;
+            right: 24px;
+            text-align: end;
+        }
+        & .description {
+            left: auto;
+            right: 24px;
+            text-align: end;
+        }
+        & .link {
+            left: auto;
+            right: 24px;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -197,6 +213,22 @@
                 color: #FFFFFF;
                 text-decoration: none;
             }
+        }
+    }
+    .firstsection.rtl {
+        & .title {
+            left: auto;
+            right: 48px;
+            text-align: end;
+        }
+        & .description {
+            left: auto;
+            right: 48px;
+            text-align: end;
+        }
+        & .link {
+            left: auto;
+            right: 48px;
         }
     }
 }
