@@ -78,6 +78,23 @@
             }
         }
     }
+    .eighthsection.rtl {
+        & .title {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 48px;
+        }
+        & .description {
+            margin-left: auto;
+            margin-right: 48px;
+            text-align: end;
+        }
+        & .coordinates {
+            margin-left: auto;
+            margin-right: 48px;
+            text-align: end;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -90,7 +107,22 @@
         }
         & .coordinates {
             margin-left: 24px;
-
+        }
+    }
+    .eighthsection.rtl {
+        & .title {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: 24px;
+        }
+        & .description {
+            margin-left: auto;
+            margin-right: 24px;
+            text-align: end;
+        }
+        & .coordinates {
+            margin-left: auto;
+            margin-right: 24px;
         }
     }
 }
@@ -173,9 +205,17 @@
         }
     }
     .eighthsection.rtl {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        text-align: end;
+        & .title {
+            width: fit-content;
+            margin-left: auto;
+        }
+        & .description {
+            text-align: end;
+            margin-left: auto;
+        }
+        & .coordinates {
+            width: fit-content;
+            margin-left: auto;
+        }
     }
 }
