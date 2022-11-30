@@ -13,7 +13,8 @@ export const sixthSectionFunction = () => {
         const rightArrow = (document.querySelector('.sixthsection .arrows .right-arrow')) as HTMLElement;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         let index = 0;
-        let rtl = false;
+        const sixthsection = document.querySelector('.sixthsection');
+        let rtl = sixthsection?.classList.contains('rtl');
         const removeBtnActiveClass = (idx: number) => {
             btns.forEach((btn, i) => {
                 btn.classList.remove('active');
@@ -27,7 +28,7 @@ export const sixthSectionFunction = () => {
             btn.addEventListener('click', () => {
                 index = i;
                 removeBtnActiveClass(i);
-                slidesWrapper.style.transform = `translateX(-${i * (width + 40)}px)`;
+                slidesWrapper.style.transform = rtl ? `translateX(${i * (width + 40)}px)` : `translateX(-${i * (width + 40)}px)`;
             });
         });
 
@@ -39,7 +40,7 @@ export const sixthSectionFunction = () => {
             }
             index -= 1;
             removeBtnActiveClass(index);
-            slidesWrapper.style.transform = `translateX(-${index * (width + 40)}px)`;
+            slidesWrapper.style.transform = rtl ? `translateX(${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
         });
         rightArrow.addEventListener('click', () => {
             if (index >= btns.length - 1) {
@@ -49,7 +50,7 @@ export const sixthSectionFunction = () => {
             }
             index += 1;
             removeBtnActiveClass(index);
-            slidesWrapper.style.transform = `translateX(-${index * (width + 40)}px)`;
+            slidesWrapper.style.transform = rtl ? `translateX(${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
         });
 
         // =========== Swipe Events =============
@@ -115,7 +116,7 @@ export const sixthSectionFunction = () => {
 
         window.addEventListener('resize', () => {
             width = slide.offsetWidth;
-            slidesWrapper.style.transform = `translateX(-${(width + 40) * index}px)`;
+            slidesWrapper.style.transform = rtl ? `translateX(-${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
         });
     });
 };

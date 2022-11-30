@@ -80,6 +80,43 @@
             }
         }
     }
+    .sixthsection.rtl {
+        padding-left: 0;
+        padding-right: 24px;
+        & .title {
+            margin-left: auto;
+            text-align: end;
+        }
+        & .slider {
+            padding-right: 24px;
+            & .slides-wrapper {
+                padding-right: 24px;
+                flex-direction: row-reverse;
+                & .slide {
+                    margin-right: 0;
+                    margin-left: 40px;
+                }
+            }
+        }
+        & .navigation {
+            right: auto;
+            left: 24px;
+            width: 280px;
+            flex-direction: row-reverse;
+            & .nav-buttons {
+                flex-direction: row-reverse;
+            }
+            & .arrows {
+                flex-direction: row-reverse;
+                & .arrow {
+                    transform: rotate(180deg);
+                }
+                & .right-arrow {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -182,6 +219,42 @@
                 }
                 & .right-arrow {
                     transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .sixthsection.rtl {
+        & .title {
+            left: auto;
+            right: 48px;
+            text-align: end;
+        }
+        & .slider {
+            & .slides-wrapper {
+                flex-direction: row-reverse;
+                & .slide {
+                    margin-right: 0;
+                    margin-left: 40px;
+                    & img {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        .navigation {
+            right: auto;
+            left: 48px;
+            flex-direction: row-reverse;
+            & .nav-buttons {
+                flex-direction: row-reverse;
+            }
+            & .arrows {
+                flex-direction: row-reverse;
+                & .arrow {
+                    transform: rotate(180deg);
+                }
+                & .right-arrow {
+                    transform: rotate(0deg);
                 }
             }
         }
