@@ -1851,7 +1851,6 @@
             }
         }
         & .findbooking-stepper {
-            left: 0;
             & .top {
                 display: flex;
                 flex-direction: row-reverse;
@@ -1860,7 +1859,7 @@
                 }
                 & .close {
                     right: auto;
-                    left: 42px;
+                    left: 17px;
                 }
             }
             & .step1 {
@@ -3119,6 +3118,69 @@
             }
             & .step.active {
                 display: block;
+            }
+        }
+    }
+    .fourthsection.rtl {
+        & .makebooking-stepper {
+            & .steps-container {
+                & .step {
+                    & .content {
+                        & form {
+                            & .top {
+                                flex-direction: column;
+                            }
+                            & .middle {
+                                flex-direction: column;
+                            }
+                            & .bottom {
+                                flex-direction: column;
+                            }
+                        }
+                    }
+                }
+                & .step3 {
+                    & .content {
+                        flex-direction: column-reverse;
+                        & .right {
+                            & .description {
+                                text-align: end;
+                                margin-left: auto;
+                                width: fit-content;
+                            }
+                        }
+                        & .left {
+                            width: 100%;
+                            & .top {
+                                width: 100%;
+                            }
+                            & .bottom {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .findbooking-stepper {
+            left: 0;
+            & .step2 {
+                & .step-title {
+                    padding-left: 0;
+                    padding-right: 10px;
+                }
+                & .content {
+                    & .left {
+                        flex-direction: column;
+                        align-items: flex-end;
+                        & .top {
+                            text-align: end;
+                        }
+                         & .bottom {
+                            text-align: end;
+                         }
+                    }
+                }
             }
         }
     }
