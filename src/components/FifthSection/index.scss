@@ -92,6 +92,23 @@
             }
         }
     }
+    .fifthsection.rtl {
+        & .top {
+            text-align: end;
+            & .title {
+                width: fit-content;
+                margin-left: auto;
+            }
+        }
+        & .card-wrapper {
+            & .card {
+                & .card-name {
+                    left: auto;
+                    right: 4px;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -180,6 +197,23 @@
             }
         }
     }
+    .fifthsection.rtl {
+        & .top {
+            text-align: end;
+            & .title {
+                width: fit-content;
+                margin-left: auto;
+            }
+        }
+        & .card-wrapper {
+            & .card {
+                & .card-name {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1360px) {
@@ -257,6 +291,20 @@
                     display: flex;
                     align-items: center;
                     color: #FFFFFF;
+                }
+            }
+        }
+    }
+    .fifthsection.rtl {
+        & .top {
+            flex-direction: row-reverse;
+            text-align: end;
+        }
+        & .card-wrapper {
+            & .card {
+                & .card-name {
+                    left: auto;
+                    right: 0;
                 }
             }
         }
