@@ -4571,5 +4571,153 @@
                 }
             }
         }
+        & .makebooking-stepper {
+            left: 0;
+            & .top {
+                flex-direction: row-reverse;
+                text-align: end;
+            }
+            & .progress {
+                flex-direction: row-reverse;
+                & .progress-bar {
+                    left: auto;
+                    right: 0;
+                }
+                & .current-progress {
+                    left: auto;
+                    right: 0;
+                }
+            }
+            & .steps-container {
+                & .step {
+                    & .step-title {
+                        flex-direction: row-reverse;
+                        & .green {
+                            padding: 8px 15px 8px 15px;
+                        }
+                    }
+                    & .content {
+                        & form {
+                            & .top {
+                                flex-direction: row-reverse;
+                                & .right {
+                                    & .select-wrapper {
+                                        & .select-box {
+                                            & .selected {
+                                                display: flex;
+                                                justify-content: end;
+                                                &::before {
+                                                    right: auto;
+                                                    left: 10px;
+                                                }
+                                                &::after {
+                                                    right: auto;
+                                                    left: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .middle {
+                                text-align: end;
+                                flex-direction: row-reverse;
+                                & .left {
+                                    & .info {
+                                        margin-left: auto;
+                                        width: fit-content;
+                                    }
+                                }
+                                & .right {
+                                    & .name {
+                                        text-align: end;
+                                    }
+                                    & .second-name {
+                                        text-align: end;
+                                    }
+                                    & .code-number {
+                                        flex-direction: row-reverse;
+                                        & .number {
+                                            text-align: end;
+                                        }
+                                        & .select-wrapper-code {
+                                            & .select-box {
+                                                & .selected {
+                                                    display: flex;
+                                                    justify-content: end;
+                                                    &::before {
+                                                        right: auto;
+                                                        left: 10px;
+                                                    }
+                                                    &::after {
+                                                        right: auto;
+                                                        left: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    & .email {
+                                        text-align: end;
+                                    }
+                                }
+                            }
+                            & .bottom {
+                                flex-direction: row-reverse;
+                                & .right {
+                                    & .select-wrapper {
+                                        & .select-box {
+                                            & .options-container.active {
+                                                text-align: end;
+                                            }
+                                            & .selected {
+                                                display: flex;
+                                                justify-content: end;
+                                                &::before {
+                                                    right: auto;
+                                                    left: 10px;
+                                                }
+                                                &::after {
+                                                    right: auto;
+                                                    left: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .step2 {
+                    & .middle {
+                        & .right {
+                            & .date-wrapper {
+                                & .date {
+                                    text-align: end;
+                                }
+                            }
+                        }
+                    }
+                }
+                & .step3 {
+                    & .content {
+                        flex-direction: row-reverse;
+                        & .right {
+                            text-align: end;
+                            & .title {
+                                margin-left: auto;
+                                width: fit-content;
+                            }
+                        }
+                        & .left {
+                            & .top {
+                                text-align: end;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
