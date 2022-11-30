@@ -18,6 +18,8 @@ export const sliderHandler = () => {
     let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
     const fourthsection =  document.querySelector('.fourthsection');
     let rtl = fourthsection?.classList.contains('rtl');
+    console.log(rtl, 'rtl');
+
 
     const removeActiveTab = (idx: number) => {
         tabs.forEach((tab, i) => {
