@@ -8,7 +8,9 @@ export const sliderHandler = () => {
     let slideIndex  = 0;
     let width = slide.offsetWidth;
     let regExp = window.getComputedStyle(slide).marginRight.match(/\d+/g);
+    let regExp2 = window.getComputedStyle(slide).marginLeft.match(/\d+/g);
     let marginRight = regExp ? regExp[ 0 ] : null;
+    let marginLeft = regExp2 ? regExp2[ 0 ] : null;
     const tabs = document.querySelectorAll('.fourthsection .tabs .tab');
     const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
     const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
@@ -126,7 +128,7 @@ export const sliderHandler = () => {
             btn.addEventListener('click', () => {
                 slideIndex = i;
                 const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-                slideWrap.style.transform = `translateX(-${i * (width + Number(marginRight))}px)`;
+                slideWrap.style.transform = rtl ? `translateX(${i * (width + Number(marginLeft))}px)` : `translateX(-${i * (width + Number(marginRight))}px)`;
                 removeActiveNavBtn(i);
             });
         });
@@ -142,7 +144,7 @@ export const sliderHandler = () => {
         }
         slideIndex -= 1;
         const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-        slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginRight))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
+        slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginLeft))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
         removeActiveNavBtn(slideIndex);
     });
 
@@ -152,7 +154,7 @@ export const sliderHandler = () => {
         } else {
             slideIndex += 1;
             const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-            slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginRight))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
+            slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginLeft))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
             removeActiveNavBtn(slideIndex);
         }
     });
@@ -194,13 +196,13 @@ export const sliderHandler = () => {
                     if (navBtns && slideIndex >= navBtns?.length - 1) {
                         slideIndex = navBtns.length - 1;
                     }
-                    wrapper.style.transform = `translateX(${(width + Number(marginRight)) * slideIndex}px)`;
+                    wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
                 } else {
                     slideIndex -= 1;
                     if (slideIndex < 0) {
                         slideIndex = 0;
                     }
-                    wrapper.style.transform = `translateX(${(width + Number(marginRight)) * slideIndex}px)`;
+                    wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
                 }
                 removeActiveNavBtn(slideIndex);
             } else {
@@ -209,13 +211,13 @@ export const sliderHandler = () => {
                     if (navBtns && slideIndex >= navBtns?.length - 1) {
                         slideIndex = navBtns.length - 1;
                     }
-                    wrapper.style.transform = `translateX(-${(width + Number(marginRight)) * slideIndex}px)`;
+                    wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
                 } else {
                     slideIndex -= 1;
                     if (slideIndex < 0) {
                         slideIndex = 0;
                     }
-                    wrapper.style.transform = `translateX(-${(width + Number(marginRight)) * slideIndex}px)`;
+                    wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
                 }
                 removeActiveNavBtn(slideIndex);
             }
@@ -227,6 +229,6 @@ export const sliderHandler = () => {
         width = slide.offsetWidth;
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
-        wrapper.style.transform = `translateX(-${(width + Number(marginRight)) * slideIndex}px)`;
+        wrapper.style.transform = rtl ? `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)` : `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
     });
 };

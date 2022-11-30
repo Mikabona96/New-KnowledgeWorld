@@ -1631,6 +1631,262 @@
             }
         }
     }
+    .fourthsection.rtl {
+        & .section-title {
+            text-align: end;
+            left: auto;
+            right: 24px;
+        }
+        & .select-wrapper-tab {
+            left: auto;
+            right: 24px;
+            margin-left: auto;
+        }
+        & .wrappers-container {
+            & .slide-wrapper.active {
+                flex-direction: row-reverse;
+                & .slide {
+                    margin-right: 0;
+                    margin-left: 24px;
+                    & .slide-date {
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .event {
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .slide-title {
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .slide-description {
+                        width: fit-content;
+                        text-align: end;
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .language {
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .time {
+                        left: auto;
+                        right: 24px;
+                    }
+                    & .price {
+                        left: auto;
+                        right: 24px;
+                    }
+                }
+            }
+        }
+        & .navigation {
+            & .nav-buttons {
+                flex-direction: row-reverse;
+            }
+            & .arrows {
+                width: 104px;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                & .arrow {
+                    transform: rotate(180deg);
+                }
+                & .right-arrow {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        & .makebooking-stepper {
+            & .top {
+                flex-direction: row-reverse;
+                text-align: end;
+            }
+            & .progress {
+                flex-direction: row-reverse;
+                & .progress-bar {
+                    left: auto;
+                    right: 0;
+                }
+                & .current-progress {
+                    left: auto;
+                    right: 0;
+                }
+            }
+            & .steps-container {
+                & .step {
+                    & .step-title {
+                        flex-direction: row-reverse;
+                        & .green {
+                            padding: 8px 14px 8px 15px;
+                        }
+                    }
+                    & .content {
+                        & form {
+                            & .top {
+                                flex-direction: row-reverse;
+                                & .right {
+                                    & .select-wrapper {
+                                        & .select-box {
+                                            & .selected {
+                                                display: flex;
+                                                justify-content: end;
+                                                &::before {
+                                                    right: auto;
+                                                    left: 10px;
+                                                }
+                                                &::after {
+                                                    right: auto;
+                                                    left: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .middle {
+                                flex-direction: row-reverse;
+                                & .left {
+                                    margin-left: 20px;
+                                    & .info {
+                                        text-align: end;
+                                        margin-left: auto;
+                                        width: fit-content;
+                                    }
+                                    & .info-description {
+                                        text-align: end;
+                                    }
+                                }
+                                & .right {
+                                    & .name {
+                                        text-align: end;
+                                    }
+                                    & .second-name {
+                                        text-align: end;
+                                    }
+                                    & .code-number {
+                                        flex-direction: row-reverse;
+                                        & .number {
+                                            text-align: end;
+                                        }
+                                        & .select-wrapper-code {
+                                            & .select-box {
+                                                & .options-container.active {
+                                                    text-align: end;
+                                                }
+                                                & .selected {
+                                                    display: flex;
+                                                    justify-content: end;
+                                                    &::before {
+                                                        right: auto;
+                                                        left: 10px;
+                                                    }
+                                                    &::after {
+                                                        right: auto;
+                                                        left: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            & .bottom {
+                                flex-direction: row-reverse;
+                                & .left {
+                                    text-align: end;
+                                }
+                                & .right {
+                                    & .select-wrapper {
+                                        & .select-box {
+                                            & .options-container.active {
+                                                text-align: end;
+                                            }
+                                            & .selected {
+                                                display: flex;
+                                                justify-content: end;
+                                                &::before {
+                                                    right: auto;
+                                                    left: 10px;
+                                                }
+                                                &::after {
+                                                    right: auto;
+                                                    left: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                & .step2 {
+                    & .middle {
+                        & .left {
+                            text-align: end;
+                        }
+                        & .right {
+                            & .date-wrapper {
+                                & .date {
+                                    text-align: end;
+                                }
+                            }
+                        }
+                    }
+                }
+                & .step3 {
+                    & .content {
+                        flex-direction: row-reverse;
+                        text-align: end;
+                        & .right {
+                            & .title {
+                                margin-left: auto;
+                                width: fit-content;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .findbooking-stepper {
+            left: 0;
+            & .top {
+                display: flex;
+                flex-direction: row-reverse;
+                & .title {
+                    text-align: end;
+                }
+                & .close {
+                    right: auto;
+                    left: 42px;
+                }
+            }
+            & .step1 {
+                & .step-title {
+                    padding-right: 10px;
+                    justify-content: end;
+                }
+                & .findBooking {
+                    & input {
+                        text-align: end;
+                    }
+                }
+            }
+            & .step2 {
+                & .step-title {
+                    width: 100%;
+                    justify-content: end;
+                }
+                & .content {
+                    & .left {
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -4520,6 +4776,8 @@
             & .slide-wrapper.active {
                 flex-direction: row-reverse;
                 & .slide {
+                    margin-right: 0;
+                    margin-left: 32px;
                     & .slide-date {
                         left: auto;
                         right: 24px;
@@ -4719,7 +4977,6 @@
             }
         }
         & .findbooking-stepper {
-            left: 0;
             & .top {
                 text-align: end;
                 flex-direction: row-reverse;
