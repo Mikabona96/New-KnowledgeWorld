@@ -14,8 +14,8 @@ export const sliderHandler = () => {
     const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
     let slideWrapperIndex = 0;
     let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
-
-    let rtl = false;
+    const fourthsection =  document.querySelector('.fourthsection');
+    let rtl = fourthsection?.classList.contains('rtl');
 
     const removeActiveTab = (idx: number) => {
         tabs.forEach((tab, i) => {
@@ -142,7 +142,7 @@ export const sliderHandler = () => {
         }
         slideIndex -= 1;
         const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-        slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
+        slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginRight))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
         removeActiveNavBtn(slideIndex);
     });
 
@@ -152,7 +152,7 @@ export const sliderHandler = () => {
         } else {
             slideIndex += 1;
             const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
-            slideWrap.style.transform = `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
+            slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginRight))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
             removeActiveNavBtn(slideIndex);
         }
     });
