@@ -168,7 +168,8 @@
         }
         & .wrappers-container {
             position: absolute;
-            width: 680px;
+            width: 100%;
+            padding: 0 24px;
             top: 199px;
             left: 50%;
             overflow: hidden;
@@ -3187,6 +3188,9 @@
 
 @media (max-width: 768px) {
     .fourthsection {
+        & .wrappers-container {
+            padding: 0;
+        }
         width: 100%;
         & .wrappers-container {
             position: absolute;
