@@ -145,6 +145,33 @@
             }
         }
     }
+    .seventhsection.rtl {
+        flex-direction: row-reverse;
+        & .left {
+            & .title {
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .info {
+                text-align: end;
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .working-hours {
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .days-time {
+                margin-left: auto;
+                & .days {
+                    text-align: end;
+                }
+                & .time {
+                    text-align: end;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -171,6 +198,9 @@
         height: 904px;
         flex-direction: column;
         align-items: center;
+    }
+    .seventhsection.rtl {
+        flex-direction: column;
     }
 }
 
@@ -292,6 +322,33 @@
                         line-height: 28px;
                         color: #000000;
                     }
+                }
+            }
+        }
+    }
+    .seventhsection.rtl {
+        flex-direction: row-reverse;
+        & .left {
+            & .title {
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .info {
+                text-align: end;
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .working-hours {
+                width: fit-content;
+                margin-left: auto;
+            }
+            & .days-time {
+                margin-left: auto;
+                & .days {
+                    text-align: end;
+                }
+                & .time {
+                    text-align: end;
                 }
             }
         }
