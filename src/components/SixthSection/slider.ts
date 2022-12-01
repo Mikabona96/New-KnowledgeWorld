@@ -11,8 +11,7 @@ export const sliderHandler = () => {
     let index = 0;
     wrapperTranslateProperty.index = index;
     wrapperTranslateProperty.width = width;
-    // const sixthsection = document.querySelector('.sixthsection');
-    // let rtl = sixthsection?.classList.contains('rtl');
+
     const removeBtnActiveClass = (idx: number) => {
         btns.forEach((btn, i) => {
             btn.classList.remove('active');

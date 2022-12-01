@@ -1,0 +1,16 @@
+export type DataStoreType = {
+    bookingType:              string,
+    name:                     string,
+    secondName:               string,
+    code:                     string,
+    number:                   string,
+    sendReminders:            boolean,
+    email:                    string,
+    knowledgeWorldNewsLetter: boolean,
+    adultVisitors:            number,
+    childVisitors:            number,
+    country:                  string,
+    center:                   string,
+    date:                     string,
+    timeSlot:                 string,
+}

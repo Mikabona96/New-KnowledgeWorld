@@ -1,6 +1,8 @@
+import { DataStoreType } from './types';
+
 export const stepperHandler = () => {
     // ================================== Data ===============================
-    const dataStore = {
+    let dataStore: DataStoreType = {
         bookingType:              'Select booking type',
         name:                     '',
         secondName:               '',
@@ -15,24 +17,30 @@ export const stepperHandler = () => {
         center:                   'Ecoman Center',
         date:                     '',
         timeSlot:                 '',
-        toInitial:                function () {
-            this.bookingType = 'Select booking type';
-            this.name = '';
-            this.secondName = '';
-            this.code = 'Code';
-            this.number = '';
-            this.sendReminders = false;
-            this.email = '';
-            this.knowledgeWorldNewsLetter = false;
-            this.adultVisitors = 0;
-            this.childVisitors = 0;
-            this.country = '';
-            this.center = 'Ecoman Center';
-            this.date = '';
-            this.timeSlot = '';
-        },
     };
-        // ============================== Steppers ========================================
+
+    const dataStoreInitial = {
+        bookingType:              'Select booking type',
+        name:                     '',
+        secondName:               '',
+        code:                     'Code',
+        number:                   '',
+        sendReminders:            false,
+        email:                    '',
+        knowledgeWorldNewsLetter: false,
+        adultVisitors:            0,
+        childVisitors:            0,
+        country:                  '',
+        center:                   'Ecoman Center',
+        date:                     '',
+        timeSlot:                 '',
+    };
+
+    const setDataStoreToInitial = () => {
+        dataStore = dataStoreInitial;
+    };
+
+    // ============================== Steppers ========================================
 
     //================== Inputs ==========================
 
@@ -349,7 +357,7 @@ export const stepperHandler = () => {
     });
 
     const restFormToInitial = () => {
-        dataStore.toInitial();
+        setDataStoreToInitial();
         forms.forEach((form) => {
             form.reset();
         });

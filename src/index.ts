@@ -59,7 +59,6 @@ switchRtl.addEventListener('click', () => {
     switchRtl.innerHTML = rtl ? 'rtl' : 'ltr';
     rtl = !rtl;
     switchPageToRtl();
-    // sliderHandler();
     sixthSectionSliderHandler();
     setWrappersToInitialPosition();
     setWrapperToInitialPosition();
