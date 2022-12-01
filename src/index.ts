@@ -17,6 +17,7 @@ export let rtl = false;
 const sections = document.querySelectorAll('section');
 
 const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
+const slidesWrapper = (document.querySelector('.sixthsection .slider .slides-wrapper')) as HTMLElement;
 
 export const wrappersTranslateProperty = {
     width:             0,
@@ -24,6 +25,11 @@ export const wrappersTranslateProperty = {
     marginRight:       0,
     slideIndex:        0,
     slideWrapperIndex: 0,
+};
+
+export const wrapperTranslateProperty = {
+    index: 0,
+    width: 0,
 };
 
 const switchPageToRtl = () => {
@@ -38,6 +44,17 @@ const setWrappersToInitialPosition = () => {
         : `translateX(-${wrappersTranslateProperty.slideIndex * (wrappersTranslateProperty.width + Number(wrappersTranslateProperty.marginRight))}px)`;
 };
 
+const setWrapperToInitialPosition = () => {
+    slidesWrapper.style.transform = rtl ? `translateX(${wrapperTranslateProperty.index * (wrapperTranslateProperty.width + 40)}px)` : `translateX(-${wrapperTranslateProperty.index * (wrapperTranslateProperty.width + 40)}px)`;
+    const btns = document.querySelectorAll('.sixthsection .nav-buttons .nav-btn');
+    btns.forEach((btn, i) => {
+        btn.classList.remove('active');
+        if (wrapperTranslateProperty.index === i) {
+            btn.classList.add('active');
+        }
+    });
+};
+
 switchRtl.addEventListener('click', () => {
     switchRtl.innerHTML = rtl ? 'rtl' : 'ltr';
     rtl = !rtl;
@@ -45,5 +62,6 @@ switchRtl.addEventListener('click', () => {
     // sliderHandler();
     sixthSectionSliderHandler();
     setWrappersToInitialPosition();
+    setWrapperToInitialPosition();
 });
 

@@ -1,3 +1,5 @@
+import { rtl, wrapperTranslateProperty } from '../..';
+
 export const sliderHandler = () => {
     const slide = (document.querySelector('.sixthsection .slider .slides-wrapper .slide')) as HTMLElement;
     let width = slide.offsetWidth;
@@ -7,8 +9,10 @@ export const sliderHandler = () => {
     const rightArrow = (document.querySelector('.sixthsection .arrows .right-arrow')) as HTMLElement;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let index = 0;
-    const sixthsection = document.querySelector('.sixthsection');
-    let rtl = sixthsection?.classList.contains('rtl');
+    wrapperTranslateProperty.index = index;
+    wrapperTranslateProperty.width = width;
+    // const sixthsection = document.querySelector('.sixthsection');
+    // let rtl = sixthsection?.classList.contains('rtl');
     const removeBtnActiveClass = (idx: number) => {
         btns.forEach((btn, i) => {
             btn.classList.remove('active');
@@ -21,6 +25,7 @@ export const sliderHandler = () => {
     btns.forEach((btn, i) => {
         btn.addEventListener('click', () => {
             index = i;
+            wrapperTranslateProperty.index = index;
             removeBtnActiveClass(i);
             slidesWrapper.style.transform = rtl ? `translateX(${i * (width + 40)}px)` : `translateX(-${i * (width + 40)}px)`;
         });
@@ -29,20 +34,24 @@ export const sliderHandler = () => {
     leftArrow.addEventListener('click', () => {
         if (index <= 0) {
             index = 0;
+            wrapperTranslateProperty.index = index;
 
             return;
         }
         index -= 1;
+        wrapperTranslateProperty.index = index;
         removeBtnActiveClass(index);
         slidesWrapper.style.transform = rtl ? `translateX(${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
     });
     rightArrow.addEventListener('click', () => {
         if (index >= btns.length - 1) {
             index = btns.length - 1;
+            wrapperTranslateProperty.index = index;
 
             return;
         }
         index += 1;
+        wrapperTranslateProperty.index = index;
         removeBtnActiveClass(index);
         slidesWrapper.style.transform = rtl ? `translateX(${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
     });
@@ -89,6 +98,7 @@ export const sliderHandler = () => {
                 }
                 slidesWrapper.style.transform = `translateX(${(width + 40) * index}px)`;
             }
+            wrapperTranslateProperty.index = index;
             removeBtnActiveClass(index);
         } else {
             if (diff < 0) {
@@ -104,12 +114,14 @@ export const sliderHandler = () => {
                 }
                 slidesWrapper.style.transform = `translateX(-${(width + 40) * index}px)`;
             }
+            wrapperTranslateProperty.index = index;
             removeBtnActiveClass(index);
         }
     });
 
     window.addEventListener('resize', () => {
         width = slide.offsetWidth;
+        wrapperTranslateProperty.width = width;
         slidesWrapper.style.transform = rtl ? `translateX(-${index * (width + 40)}px)` : `translateX(-${index * (width + 40)}px)`;
     });
 };
