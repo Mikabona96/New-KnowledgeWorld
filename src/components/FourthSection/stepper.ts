@@ -340,6 +340,8 @@ export const stepperHandler = () => {
     const forms = document.querySelectorAll('form');
 
     makeBookingBtn?.addEventListener('click', () => {
+        const fourthSection = document.querySelector('.fourthsection');
+        const rtl = !!fourthSection?.classList.contains('rtl');
         ProgressBar.style.display = 'flex';
         rtl ? makeBookingStepper.style.left = '0px' : makeBookingStepper.style.right = '0px';
         index = 0;
@@ -384,6 +386,8 @@ export const stepperHandler = () => {
     };
 
     makeBookingStepperClose.addEventListener('click', () => {
+        const fourthSection = document.querySelector('.fourthsection');
+        const rtl = !!fourthSection?.classList.contains('rtl');
         rtl ? makeBookingStepper.style.left = '-200%' : makeBookingStepper.style.right = '-200%';
         index = 0;
         removeActiveStep();
@@ -412,12 +416,16 @@ export const stepperHandler = () => {
         });
     };
     viewBookingBtn?.addEventListener('click', () => {
+        const fourthSection = document.querySelector('.fourthsection');
+        const rtl = !!fourthSection?.classList.contains('rtl');
         findBookingSteps[ findBookingIndex ].classList.add('active');
         rtl ? findBookingStepper.style.left = '0px' : findBookingStepper.style.right = '0px';
         console.log('click');
     });
 
     closeFindBookingBtn?.addEventListener('click', () => {
+        const fourthSection = document.querySelector('.fourthsection');
+        const rtl = !!fourthSection?.classList.contains('rtl');
         findBookingIndex = 0;
         fbRemoveActiveStep(findBookingIndex);
         rtl ? findBookingStepper.style.left = '-200%' : findBookingStepper.style.right = '-200%';
