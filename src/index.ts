@@ -23,8 +23,8 @@ const switchPageToRtl = () => {
     });
 };
 
-switchPageToRtl();
 switchRtl.addEventListener('click', () => {
+    switchRtl.innerHTML = rtl ? 'rtl' : 'ltr';
     rtl = !rtl;
     switchPageToRtl();
     sliderHandler();
