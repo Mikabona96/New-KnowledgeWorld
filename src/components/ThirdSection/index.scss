@@ -1,0 +1,96 @@
+@import '../../assets/variables.scss';
+@import '../../assets/fonts.scss';
+
+@media (max-width: 1359px) {
+    .thirdsection {
+        width: 100%;
+        height: 743px;
+        position: relative;
+        overflow: hidden;
+        & img {
+            width: 1359px;
+            // height: 540px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 1186px) {
+    .thirdsection {
+        width: 100%;
+        height: 642px;
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+        & img {
+            width: 1186px;
+            // height: 540px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .thirdsection {
+        width: 100%;
+        height: 560px;
+        position: relative;
+        overflow: hidden;
+        & img {
+            width: 992px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .thirdsection {
+        width: 100%;
+        height: 430px;
+        position: relative;
+        overflow: hidden;
+        & img {
+            width: 768px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .thirdsection {
+        width: 375px;
+        height: 309px;
+        position: relative;
+        overflow: hidden;
+        & img {
+            width: 528px;
+            height: 309px;
+            position: absolute;
+            top: 0;
+            left: -56px;
+            transform: unset;
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .thirdsection {
+        width: $section-width;
+        height: 794px;
+        margin: auto;
+    }
+}

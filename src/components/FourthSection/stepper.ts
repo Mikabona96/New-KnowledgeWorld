@@ -332,11 +332,9 @@ export const stepperHandler = () => {
         });
     });
     // ============================= Open Stepper =============================
-    const fourthSection = document.querySelector('.fourthsection');
     const makeBookingBtn = document.querySelector('.buttons .makebooking-btn');
     const makeBookingStepper = (document.querySelector('.makebooking-stepper')) as HTMLElement;
     const makeBookingStepperClose = (document.querySelector('.makebooking-stepper .close')) as HTMLElement;
-    const rtl = !!fourthSection?.classList.contains('rtl');
     const forms = document.querySelectorAll('form');
 
     makeBookingBtn?.addEventListener('click', () => {

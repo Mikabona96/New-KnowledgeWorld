@@ -1,4 +1,5 @@
 // MarkerGen re-export
+export * from './ThirdSection';
 export * from './Footer';
 export * from './NinethSection';
 export * from './EighthSection';
