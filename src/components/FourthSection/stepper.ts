@@ -353,7 +353,6 @@ export const stepperHandler = () => {
         index = 0;
         removeActiveStep();
         steps[ index ].classList.add('active');
-        console.log('click');
     });
 
     const restFormToInitial = () => {
