@@ -18,8 +18,6 @@ export const sliderHandler = () => {
     let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
     const fourthsection =  document.querySelector('.fourthsection');
     let rtl = fourthsection?.classList.contains('rtl');
-    console.log(rtl, 'rtl');
-
 
     const removeActiveTab = (idx: number) => {
         tabs.forEach((tab, i) => {
@@ -94,8 +92,10 @@ export const sliderHandler = () => {
     const selectedTab = (document.querySelector('.select-wrapper-tab .selected')) as HTMLElement;
     const optionsTab = document.querySelectorAll('.select-wrapper-tab .option');
     const optionsContainerTab = document.querySelector('.select-wrapper-tab .options-container');
+    let isTabClicked = false;
     selectedTab?.addEventListener('click', () => {
-        optionsContainerTab?.classList.toggle('active');
+        isTabClicked ? optionsContainerTab?.classList.remove('active') : optionsContainerTab?.classList.add('active');
+        isTabClicked = !isTabClicked;
     });
     optionsTab.forEach((o) => {
         o.addEventListener('click', () => {
