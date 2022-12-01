@@ -1,4 +1,4 @@
-import { rtl } from '../..';
+import { rtl, wrappersTranslateProperty } from '../..';
 
 export const sliderHandler = () => {
     //================================== SLIDER ==========================================
@@ -13,12 +13,15 @@ export const sliderHandler = () => {
     let regExp2 = window.getComputedStyle(slide).marginLeft.match(/\d+/g);
     let marginRight = regExp ? regExp[ 0 ] : null;
     let marginLeft = regExp2 ? regExp2[ 0 ] : null;
+    wrappersTranslateProperty.marginLeft = Number(marginLeft);
+    wrappersTranslateProperty.marginRight = Number(marginRight);
     const tabs = document.querySelectorAll('.fourthsection .tabs .tab');
     const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
     const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
     let slideWrapperIndex = 0;
     let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
     let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
+    wrappersTranslateProperty.width = width;
 
     const removeActiveTab = (idx: number) => {
         tabs.forEach((tab, i) => {
@@ -74,6 +77,7 @@ export const sliderHandler = () => {
                 }
                 wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
             }
+            wrappersTranslateProperty.slideIndex = slideIndex;
             removeActiveNavBtn(slideIndex);
         } else {
             if (diff < 0) {
@@ -89,6 +93,7 @@ export const sliderHandler = () => {
                 }
                 wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
             }
+            wrappersTranslateProperty.slideIndex = slideIndex;
             removeActiveNavBtn(slideIndex);
         }
     };
@@ -103,6 +108,7 @@ export const sliderHandler = () => {
         wrapper?.removeEventListener('touchmove', touchMoveHandler);
         wrapper?.removeEventListener('touchend', touchEndHandler);
         slideWrapperIndex = idx;
+        wrappersTranslateProperty.slideWrapperIndex = slideWrapperIndex;
         wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
         wrapper?.addEventListener('touchstart', touchStartHandler);
         wrapper?.addEventListener('touchmove', touchMoveHandler);
@@ -129,6 +135,7 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             slideIndex = 0;
+            wrappersTranslateProperty.slideIndex = slideIndex;
             initNavBtns();
         }
         if (idx === 1) {
@@ -145,6 +152,7 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             slideIndex = 0;
+            wrappersTranslateProperty.slideIndex = slideIndex;
             initNavBtns();
         }
         if (idx === 2) {
@@ -161,6 +169,7 @@ export const sliderHandler = () => {
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
             slideIndex = 0;
+            wrappersTranslateProperty.slideIndex = slideIndex;
             initNavBtns();
         }
         slides = slideWrappers[ slideWrapperIndex ].querySelectorAll('.slide');
@@ -210,6 +219,7 @@ export const sliderHandler = () => {
                 const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
                 slideWrap.style.transform = rtl ? `translateX(${i * (width + Number(marginLeft))}px)` : `translateX(-${i * (width + Number(marginRight))}px)`;
                 removeActiveNavBtn(i);
+                wrappersTranslateProperty.slideIndex = slideIndex;
             });
         });
     }
@@ -219,10 +229,12 @@ export const sliderHandler = () => {
     leftArrow.addEventListener('click', () => {
         if (slideIndex <= 0) {
             slideIndex = 0;
+            wrappersTranslateProperty.slideIndex = slideIndex;
 
             return;
         }
         slideIndex -= 1;
+        wrappersTranslateProperty.slideIndex = slideIndex;
         const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
         slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginLeft))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
         removeActiveNavBtn(slideIndex);
@@ -231,8 +243,10 @@ export const sliderHandler = () => {
     rightArrow.addEventListener('click', () => {
         if (slideIndex >= slides.length - 1) {
             slideIndex = slides.length - 1;
+            wrappersTranslateProperty.slideIndex = slideIndex;
         } else {
             slideIndex += 1;
+            wrappersTranslateProperty.slideIndex = slideIndex;
             const slideWrap = slideWrapper[ slideWrapperIndex ] as HTMLElement;
             slideWrap.style.transform = rtl ? `translateX(${slideIndex * (width + Number(marginLeft))}px)` : `translateX(-${slideIndex * (width + Number(marginRight))}px)`;
             removeActiveNavBtn(slideIndex);
@@ -241,6 +255,7 @@ export const sliderHandler = () => {
 
     window.addEventListener('resize', () => {
         width = slide.offsetWidth;
+        wrappersTranslateProperty.width = width;
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
         wrapper.style.transform = rtl ? `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)` : `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
