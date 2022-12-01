@@ -7,15 +7,16 @@ import './main.scss';
 // TS Modules
 import './components';
 import './elements';
-import { sliderHandler } from './components/FourthSection/slider';
 import { sliderHandler as sixthSectionSliderHandler } from './components/SixthSection/slider';
 
 
 const switchRtl = (document.querySelector('.header .links li .link.rtl')) as HTMLElement;
 
-let rtl = false;
+export let rtl = false;
 
 const sections = document.querySelectorAll('section');
+
+const slideWrappers = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper');
 
 const switchPageToRtl = () => {
     sections.forEach((section) => {
@@ -23,11 +24,19 @@ const switchPageToRtl = () => {
     });
 };
 
+// const setWrappersToInitialPosition = () => {
+//     slideWrappers.forEach((slideWrapper) => {
+//         const wrapper = slideWrapper as HTMLElement;
+//         wrapper.style.transform = 'translateX(0px)';
+//     });
+// };
+
 switchRtl.addEventListener('click', () => {
     switchRtl.innerHTML = rtl ? 'rtl' : 'ltr';
     rtl = !rtl;
     switchPageToRtl();
-    sliderHandler();
+    // sliderHandler();
     sixthSectionSliderHandler();
+    // setWrappersToInitialPosition();
 });
 

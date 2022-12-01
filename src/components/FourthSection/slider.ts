@@ -1,3 +1,5 @@
+import { rtl } from '../..';
+
 export const sliderHandler = () => {
     //================================== SLIDER ==========================================
     const slide = (document.querySelector('.fourthsection .wrappers-container .slide-wrapper .slide')) as HTMLElement;
@@ -16,8 +18,7 @@ export const sliderHandler = () => {
     const navBtnsContainer = document.querySelector('.fourthsection .nav-buttons');
     let slideWrapperIndex = 0;
     let slides = document.querySelectorAll('.fourthsection .wrappers-container .slide-wrapper.this-week .slide');
-    const fourthsection =  document.querySelector('.fourthsection');
-    let rtl = fourthsection?.classList.contains('rtl');
+    let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
 
     const removeActiveTab = (idx: number) => {
         tabs.forEach((tab, i) => {
@@ -27,8 +28,85 @@ export const sliderHandler = () => {
             }
         });
     };
+
+    // ================== Swipe Events =================
+    // =========== Swipe Events =============
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let initialPosition = 0;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let moving = false;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let transform = 0;
+    let diff = 0;
+    let currentPosition = 0;
+
+    const touchStartHandler = (event: any) => {
+        initialPosition = event.touches[ 0 ].clientX;
+        moving = true;
+        const transformMatrix = window.getComputedStyle(wrapper).getPropertyValue('transform');
+        if (transformMatrix !== 'none') {
+            transform = Number(transformMatrix.split(',')[ 4 ].trim());
+        }
+    };
+
+    const touchMoveHandler = (event: any) => {
+        if (moving) {
+            currentPosition = event.touches[ 0 ].clientX;
+            diff = currentPosition - initialPosition;
+
+            wrapper.style.transform = `translateX(${transform + diff}px)`;
+        }
+    };
+
+    const touchEndHandler = () => {
+        moving = false;
+        if (rtl) {
+            if (diff > 0) {
+                slideIndex += 1;
+                if (navBtns && slideIndex >= navBtns?.length - 1) {
+                    slideIndex = navBtns.length - 1;
+                }
+                wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
+            } else {
+                slideIndex -= 1;
+                if (slideIndex < 0) {
+                    slideIndex = 0;
+                }
+                wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
+            }
+            removeActiveNavBtn(slideIndex);
+        } else {
+            if (diff < 0) {
+                slideIndex += 1;
+                if (navBtns && slideIndex >= navBtns?.length - 1) {
+                    slideIndex = navBtns.length - 1;
+                }
+                wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
+            } else {
+                slideIndex -= 1;
+                if (slideIndex < 0) {
+                    slideIndex = 0;
+                }
+                wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
+            }
+            removeActiveNavBtn(slideIndex);
+        }
+    };
+
+    wrapper?.addEventListener('touchstart', touchStartHandler);
+    wrapper?.addEventListener('touchmove', touchMoveHandler);
+    wrapper?.addEventListener('touchend', touchEndHandler);
+
+
     const removeActiveSlideWrapper = (idx: number) => {
+        wrapper?.removeEventListener('touchstart', touchStartHandler);
+        wrapper?.removeEventListener('touchmove', touchMoveHandler);
+        wrapper?.removeEventListener('touchend', touchEndHandler);
         slideWrapperIndex = idx;
+        wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
+        wrapper?.addEventListener('touchstart', touchStartHandler);
+        wrapper?.addEventListener('touchmove', touchMoveHandler);
+        wrapper?.addEventListener('touchend', touchEndHandler);
         slideWrappers.forEach((slideWrapper, i) => {
             slideWrapper.classList.remove('active');
             if (i === idx) {
@@ -50,8 +128,8 @@ export const sliderHandler = () => {
                 navBtnsContainer?.append(navBtn);
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
+            slideIndex = 0;
             initNavBtns();
-            initSwipeEvents(slideWrapperIndex);
         }
         if (idx === 1) {
             navBtnsContainer!.innerHTML = '';
@@ -66,8 +144,8 @@ export const sliderHandler = () => {
                 navBtnsContainer?.append(navBtn);
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
+            slideIndex = 0;
             initNavBtns();
-            initSwipeEvents(slideWrapperIndex);
         }
         if (idx === 2) {
             navBtnsContainer!.innerHTML = '';
@@ -82,8 +160,8 @@ export const sliderHandler = () => {
                 navBtnsContainer?.append(navBtn);
             }
             navBtns = document.querySelectorAll('.fourthsection .nav-buttons .nav-btn');
+            slideIndex = 0;
             initNavBtns();
-            initSwipeEvents(slideWrapperIndex);
         }
         slides = slideWrappers[ slideWrapperIndex ].querySelectorAll('.slide');
     };
@@ -160,72 +238,6 @@ export const sliderHandler = () => {
             removeActiveNavBtn(slideIndex);
         }
     });
-
-    // ================== Swipe Events =================
-    function initSwipeEvents(slideWrapperIndex: number) {
-        // =========== Swipe Events =============
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        let initialPosition = 0;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        let moving = false;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        let transform = 0;
-        let diff = 0;
-        let currentPosition = 0;
-        let wrapper = slideWrappers[ slideWrapperIndex ] as HTMLElement;
-
-        wrapper?.addEventListener('touchstart', (event: any) => {
-            initialPosition = event.touches[ 0 ].clientX;
-            moving = true;
-            const transformMatrix = window.getComputedStyle(wrapper).getPropertyValue('transform');
-            if (transformMatrix !== 'none') {
-                transform = Number(transformMatrix.split(',')[ 4 ].trim());
-            }
-        });
-        wrapper?.addEventListener('touchmove', (event: any) => {
-            if (moving) {
-                currentPosition = event.touches[ 0 ].clientX;
-                diff = currentPosition - initialPosition;
-
-                wrapper.style.transform = `translateX(${transform + diff}px)`;
-            }
-        });
-        wrapper?.addEventListener('touchend', () => {
-            moving = false;
-            if (rtl) {
-                if (diff > 0) {
-                    slideIndex += 1;
-                    if (navBtns && slideIndex >= navBtns?.length - 1) {
-                        slideIndex = navBtns.length - 1;
-                    }
-                    wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
-                } else {
-                    slideIndex -= 1;
-                    if (slideIndex < 0) {
-                        slideIndex = 0;
-                    }
-                    wrapper.style.transform = `translateX(${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
-                }
-                removeActiveNavBtn(slideIndex);
-            } else {
-                if (diff < 0) {
-                    slideIndex += 1;
-                    if (navBtns && slideIndex >= navBtns?.length - 1) {
-                        slideIndex = navBtns.length - 1;
-                    }
-                    wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
-                } else {
-                    slideIndex -= 1;
-                    if (slideIndex < 0) {
-                        slideIndex = 0;
-                    }
-                    wrapper.style.transform = `translateX(-${(width + Number(rtl ? marginLeft : marginRight)) * slideIndex}px)`;
-                }
-                removeActiveNavBtn(slideIndex);
-            }
-        });
-    }
-    initSwipeEvents(slideWrapperIndex);
 
     window.addEventListener('resize', () => {
         width = slide.offsetWidth;
